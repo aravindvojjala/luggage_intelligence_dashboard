@@ -73,21 +73,39 @@ CEREBRAS_API_KEY=your_api_key_here
 
 
 ---
+## STEP-BY-STEP EXECUTION FLOW
+1. Run scraper → raw_data.csv
+2. Run clean → clean_data.csv
+3. Run sentiment → brand_summary.csv
+4. Run LLM insights → insights.txt
+5. Run Streamlit → Dashboard
+---
 
 ## ▶️ How to Run
 
-### Step 1: Run Sentiment Analysis
+### Step 1: Run scraper
+```commandline
+python scraper/scraper.py
+```
 
+### Step 2: Clean data
+```commandline
+python analysis/clean.py
+```
+
+### Step 3: Run Sentiment Analysis
 ```commandline
 python analysis/sentiment.py
 ```
 
----
-
-### Step 2: Generate LLM Insights
-
+### Step 4: Generate LLM Insights
 ```commandline
 python analysis/llm_insights.py
+```
+
+### Step 5: Run dashboard
+```commandline
+streamlit run app/app.py
 ```
 
 ---
@@ -95,10 +113,8 @@ python analysis/llm_insights.py
 ## 📊 Output
 
 The generated insights will be saved in:
-
-
 data/insights.txt
-
+The generated insights will be displayed in UI
 
 ---
 
@@ -120,3 +136,23 @@ data/insights.txt
 - python-dotenv
 
 ---
+
+## 📌 Notes
+
+- Ensure API key is valid before running
+- Do not share `.env` file publicly
+- Works locally (no deployment required)
+
+---
+
+## 🎯 Future Improvements
+
+- Streamlit Dashboard for visualization
+- Real-time review analysis
+- Deployment using cloud platforms
+
+---
+
+## 👨‍💻 Author
+
+Aravind
