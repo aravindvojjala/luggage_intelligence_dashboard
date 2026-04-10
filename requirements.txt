@@ -1,0 +1,6 @@
+pandas
+playwright
+textblob
+streamlit
+plotly
+openai
